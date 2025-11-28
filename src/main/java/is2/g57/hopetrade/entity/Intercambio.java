@@ -2,7 +2,6 @@ package is2.g57.hopetrade.entity;
 import jakarta.persistence.*;
 import java.io.Serializable;
 
-import javax.persistence.ManyToMany;
 
 @Entity
 @Table(name = "intercambio", uniqueConstraints = {@UniqueConstraint(columnNames = {"id"})})
