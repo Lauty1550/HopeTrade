@@ -15,6 +15,7 @@ import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.apache.tomcat.util.http.fileupload.disk.DiskFileItem;
 import org.springframework.core.io.ByteArrayResource;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,8 @@ public class ImageService {
 
     // Crear dir si no existe
     private final Path root = Paths.get("imgs");
-    private final Path sample = Paths.get("sample");
+    private final Path sample = Paths.get("src/main/resources/sample");
+
 
         public ImageService() {
         try {
@@ -125,13 +127,14 @@ public Resource loadSample(String filename) {
 
 public String loadSampleBase64(String filename) {
     try {
-        Path file = sample.resolve(filename);
-        System.out.println("Resolved File Path: " + file.toString()); // Log the resolved file path
-        return Base64.getEncoder().encodeToString(Files.readAllBytes(file));
+        ClassPathResource resource = new ClassPathResource("sample/" + filename);
+        byte[] bytes = resource.getInputStream().readAllBytes();
+        return Base64.getEncoder().encodeToString(bytes);
     } catch (IOException e) {
-        throw new RuntimeException("Error: " + e.getMessage());
+        throw new RuntimeException("Error: " + filename);
     }
 }
+
 
 public String loadBase64(String filename) {
     try {
