@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import LoginPage from "./containers/LoginPage";
 import SignUpPage from "./containers/SignUpPage";
 import HomePage from "./containers/HomePage";
@@ -26,137 +26,143 @@ import ProfilePage from "./containers/ProfilePage";
 import AdministradorProfilePage from "./containers/AdministradorProfilePage";
 import SystemAdminsPage from "./containers/SystemAdminsPage";
 import SystemUsersListPage from "./containers/SystemUsersListPage";
-import CommentsPage from './containers/CommentsPage';
-import CardPaymentPage from './containers/CardPaymentPage';
-import DonacionEnFilialPage from './containers/DonacionEnFilialPage';
-import MostrarDonacionesPage from './containers/MostrarDonacionesPage';
+import CommentsPage from "./containers/CommentsPage";
+import CardPaymentPage from "./containers/CardPaymentPage";
+import DonacionEnFilialPage from "./containers/DonacionEnFilialPage";
+import MostrarDonacionesPage from "./containers/MostrarDonacionesPage";
 
 const router = createBrowserRouter(
-	[
-		{
-			path: "",
-			element: <App />,
-			children: [
-				{
-					path: "/login",
-					element: <LoginPage />
-				},
-				{
-					path: "/logAdmin",
-					element: <LoginAdminPage />
-				},
-				{
-					path: "/register",
-					element: <SignUpPage />
-				},
-				{
-					path: "/home",
-					element: <HomePage />
-				},
-				{
-					path: "/posts",
-					element: <PostListPage />
-				},
-				{
-					path: "/my-posts",
-					element: <PostListPage />
-				},
-				{
-					path: "/add-post",
-					element: <AddPostPage />
-				},
-				{
-					path: "/edit-post",
-					element: <EditPostPage />
-				},
-				{
-					path: "/add-oferta",
-					element: <AddOfertaPage />
-				},
-				{
-					path: "/inspect-post/:id",
-					element: <InspectPostPage />
-				},
-				{
-					path: "/exchange/:id",
-					element: <Exchange />
-				},
-				{
-					path: "/exchanges",
-					element: <ExchangeListPage />
-				},
-				{
-					path: "/exchanges/:id",
-					element: <ExchangeListPageByUser />
-				},
-				{
-					path: "/test",
-					element: <TestPage />
-				},
-				{
-					path: "/select-filial",
-					element: <SelectFilialPage />
-				},
-				{
-					path: "/profile",
-					element: <EditProfilePage />
-				},
-				{
-					path: "/administrador-profile",
-					element: <EditProfilePageAyudante />
-				},
-				{
-					path: "/cambiarContrasenia",
-					element: <ChangePasswordPage />
-				},
-				{
-					path: "/verperfil",
-					element: <ProfilePage />
-				},
-				{
-					path: "/verperfiladministrativo",
-					element: <AdministradorProfilePage />
-				},
-				{
-					path: "/adminusers",
-					element: <SystemAdminsPage />
-				},
-				{
-					path: "/usersystem",
-					element: <SystemUsersListPage />
-				},
-				{
-					path: "/comentarios/:id",
-					element: <CommentsPage />
-				},
-				{
-					path: "/pago-tarjeta",
-					element: <CardPaymentPage />
-				},
-				{
-					path: "/donacion-presencial",
-					element: <DonacionEnFilialPage />
-				},
-				{
-					path: "/ver-donaciones",
-					element: <MostrarDonacionesPage />
-				},
-			]
-		},
-	],
-	{
-		basename: "/app"
-	});
+  [
+    {
+      path: "",
+      element: <App />,
+      children: [
+        {
+          path: "/login",
+          element: <LoginPage />,
+        },
+        {
+          path: "/logAdmin",
+          element: <LoginAdminPage />,
+        },
+        {
+          path: "/register",
+          element: <SignUpPage />,
+        },
+        {
+          path: "/home",
+          element: <HomePage />,
+        },
+        {
+          path: "/posts",
+          element: <PostListPage />,
+        },
+        {
+          path: "/my-posts",
+          element: <PostListPage />,
+        },
+        {
+          path: "/add-post",
+          element: <AddPostPage />,
+        },
+        {
+          path: "/edit-post",
+          element: <EditPostPage />,
+        },
+        {
+          path: "/add-oferta",
+          element: <AddOfertaPage />,
+        },
+        {
+          path: "/inspect-post/:id",
+          element: <InspectPostPage />,
+        },
+        {
+          path: "/exchange/:id",
+          element: <Exchange />,
+        },
+        {
+          path: "/exchanges",
+          element: <ExchangeListPage />,
+        },
+        {
+          path: "/exchanges/:id",
+          element: <ExchangeListPageByUser />,
+        },
+        {
+          path: "/test",
+          element: <TestPage />,
+        },
+        {
+          path: "/select-filial",
+          element: <SelectFilialPage />,
+        },
+        {
+          path: "/profile",
+          element: <EditProfilePage />,
+        },
+        {
+          path: "/administrador-profile",
+          element: <EditProfilePageAyudante />,
+        },
+        {
+          path: "/cambiarContrasenia",
+          element: <ChangePasswordPage />,
+        },
+        {
+          path: "/verperfil",
+          element: <ProfilePage />,
+        },
+        {
+          path: "/verperfiladministrativo",
+          element: <AdministradorProfilePage />,
+        },
+        {
+          path: "/adminusers",
+          element: <SystemAdminsPage />,
+        },
+        {
+          path: "/usersystem",
+          element: <SystemUsersListPage />,
+        },
+        {
+          path: "/comentarios/:id",
+          element: <CommentsPage />,
+        },
+        {
+          path: "/pago-tarjeta",
+          element: <CardPaymentPage />,
+        },
+        {
+          path: "/donacion-presencial",
+          element: <DonacionEnFilialPage />,
+        },
+        {
+          path: "/ver-donaciones",
+          element: <MostrarDonacionesPage />,
+        },
+      ],
+    },
+  ],
+  {
+    basename: "/app",
+  }
+);
 
-axios.defaults.baseURL = "http://localhost:8080";
-axios.interceptors.response.use(response => {
-	return response.headers['content-type'] === 'application/json' ? response : Promise.reject(response);
-}, error => Promise.reject(error));
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+axios.interceptors.response.use(
+  (response) => {
+    return response.headers["content-type"] === "application/json"
+      ? response
+      : Promise.reject(response);
+  },
+  (error) => Promise.reject(error)
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-	<React.StrictMode>
-		<RouterProvider router={router} />
-	</React.StrictMode>
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
 );
 
 reportWebVitals();
